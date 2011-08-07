@@ -1,0 +1,8 @@
+*.Cache
+*.config
+*.db
+*.suo
+*.tmp
+*.user
+bin
+obj
