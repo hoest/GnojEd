@@ -1,8 +1,9 @@
 *.Cache
-*.config
 *.db
 *.suo
 *.tmp
 *.user
 bin
 obj
+PrecompiledWeb
+web.config
