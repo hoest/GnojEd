@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnojEd.Cms", "GnojEd.Cms\GnojEd.Cms.csproj", "{767F8D5A-9953-4B7F-A146-F5D616699FB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnojEd.Engine", "GnojEd.Engine\GnojEd.Engine.csproj", "{767F8D5A-9953-4B7F-A146-F5D616699FB6}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GnojEd.Site", "GnojEd.Site\", "{A62D37CD-CC47-416D-A457-DC07AAF60FFF}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		ProjectReferences = "{767F8D5A-9953-4B7F-A146-F5D616699FB6}|GnojEd.Cms.dll;"
+		ProjectReferences = "{767F8D5A-9953-4B7F-A146-F5D616699FB6}|GnojEd.Engine.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/GnojEd.Site"
 		Debug.AspNetCompiler.PhysicalPath = "GnojEd.Site\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\GnojEd.Site\"
@@ -21,9 +21,12 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GnojEd.Site", "GnojEd.Site\
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "51414"
+		VWDPort = "54536"
 		VWDVirtualPath = "/"
 		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D} = {F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnojEd.Sql", "GnojEd.Sql\GnojEd.Sql.csproj", "{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}"
@@ -58,7 +61,8 @@ Global
 		{A62D37CD-CC47-416D-A457-DC07AAF60FFF}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{A62D37CD-CC47-416D-A457-DC07AAF60FFF}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
 		{A62D37CD-CC47-416D-A457-DC07AAF60FFF}.Release|x86.ActiveCfg = Debug|Any CPU
-		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Debug|x86.ActiveCfg = Debug|x86

@@ -5,14 +5,14 @@
   using System.Xml.Linq;
 
   /// <summary>
-  /// 
+  /// Program class
   /// </summary>
-  class Program {
+  public class Program {
     /// <summary>
-    /// 
+    /// Main method
     /// </summary>
-    /// <param name="args"></param>
-    static void Main(string[] args) {
+    /// <param name="args">Arguments string array</param>
+    public static void Main(string[] args) {
       if (args.Length != 1 && !String.IsNullOrEmpty(args[0])) {
         throw new ArgumentNullException("databaseXmlScheme");
       }

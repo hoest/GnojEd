@@ -1,1 +1,1 @@
-﻿<%@ Application Language="C#" Inherits="GnojEd.Cms.Application" %>
+﻿<%@ Application Language="C#" Inherits="GnojEd.Engine.Application" %>
