@@ -1,5 +1,6 @@
 ﻿namespace GnojEd.Engine.Controller {
   using System;
+  using System.Collections.Generic;
   using GnojEd.Engine.Shared;
 
   /// <summary>
@@ -12,10 +13,15 @@
     /// <param name="className">Name of the class</param>
     /// <returns>IController object</returns>
     public static IController GetController(string className) {
-      string fullClassName = String.Format("{0}.{1}Controller", "GnojEd.Engine.Controller", className);
+      var controllerPath = new List<string>() {
+        "GnojEd.Engine.Controller",
+        "GnojEd.Model.Controller"
+      };
 
-      if (Reflection.HasType<IController>(fullClassName)) {
-        return Reflection.Activate<IController>(fullClassName);
+      className = String.Format("{0}Controller", className);
+
+      if (Reflection.HasType<IController>(className, controllerPath)) {
+        return Reflection.Activate<IController>(className, controllerPath);
       }
       else {
         throw new ControllerNotFoundException(String.Format("Controller not found for '{0}'", className));

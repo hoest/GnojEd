@@ -6,7 +6,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GnojEd.Site", "GnojEd.Site\", "{A62D37CD-CC47-416D-A457-DC07AAF60FFF}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		ProjectReferences = "{767F8D5A-9953-4B7F-A146-F5D616699FB6}|GnojEd.Engine.dll;"
+		ProjectReferences = "{767F8D5A-9953-4B7F-A146-F5D616699FB6}|GnojEd.Engine.dll;{D47C96DB-4349-4BEC-A602-2F711935F13A}|GnojEd.Model.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/GnojEd.Site"
 		Debug.AspNetCompiler.PhysicalPath = "GnojEd.Site\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\GnojEd.Site\"
@@ -25,11 +25,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GnojEd.Site", "GnojEd.Site\
 		VWDVirtualPath = "/"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
-	ProjectSection(ProjectDependencies) = postProject
-		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D} = {F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnojEd.Sql", "GnojEd.Sql\GnojEd.Sql.csproj", "{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnojEd.Model", "GnojEd.Model\GnojEd.Model.csproj", "{D47C96DB-4349-4BEC-A602-2F711935F13A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,6 +71,16 @@ Global
 		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Release|x86.ActiveCfg = Release|x86
 		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Release|x86.Build.0 = Release|x86
+		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
