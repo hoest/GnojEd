@@ -9,11 +9,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
-<<<<<<< HEAD
     <DocumentationFile>bin\Debug\GnojEd.Engine.xml</DocumentationFile>
-=======
-    <DocumentationFile>GnojEd.Engine.xml</DocumentationFile>
->>>>>>> a200aeac816aedf9c777fc92810cac98ae789cc2
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
@@ -24,11 +20,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-<<<<<<< HEAD
     <DocumentationFile>bin\Release\GnojEd.Engine.xml</DocumentationFile>
-=======
-    <DocumentationFile>GnojEd.Engine.xml</DocumentationFile>
->>>>>>> a200aeac816aedf9c777fc92810cac98ae789cc2
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
