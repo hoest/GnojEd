@@ -30,6 +30,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Jessica">
       <HintPath>..\packages\Jessica.0.9.0\lib\Jessica.dll</HintPath>
@@ -59,12 +66,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
+    <Compile Include="Controller\ControllerNotFoundException.cs" />
+    <Compile Include="Controller\ControllerService.cs" />
+    <Compile Include="Controller\IController.cs" />
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="Data\DBFactory.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\IDBFactory.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Model\IModel.cs" />
+    <Compile Include="Model\ModelNotFoundException.cs" />
+    <Compile Include="Model\ModelService.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Modules\AdminModule.cs" />
     <Compile Include="Modules\AuthenticationModule.cs">
       <SubType>Code</SubType>
@@ -75,6 +91,8 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\Authentication.cs" />
+    <Compile Include="Shared\GnojEdException.cs" />
+    <Compile Include="Shared\Reflection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
