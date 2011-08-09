@@ -8,7 +8,11 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+<<<<<<< HEAD
     <DocumentationFile>bin\Debug\GnojEd.Sql.xml</DocumentationFile>
+=======
+    <DocumentationFile>GnojEd.Sql.xml</DocumentationFile>
+>>>>>>> a200aeac816aedf9c777fc92810cac98ae789cc2
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
@@ -20,7 +24,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+<<<<<<< HEAD
     <DocumentationFile>bin\Release\GnojEd.Sql.xml</DocumentationFile>
+=======
+    <DocumentationFile>GnojEd.Sql.xml</DocumentationFile>
+>>>>>>> a200aeac816aedf9c777fc92810cac98ae789cc2
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
