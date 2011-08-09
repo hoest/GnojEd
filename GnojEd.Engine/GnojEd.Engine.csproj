@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
+    <Compile Include="Config\GnojEdConfiguration.cs" />
     <Compile Include="Controller\ControllerNotFoundException.cs" />
     <Compile Include="Controller\ControllerService.cs" />
     <Compile Include="Controller\IController.cs" />
