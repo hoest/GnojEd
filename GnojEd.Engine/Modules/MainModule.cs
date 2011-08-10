@@ -1,4 +1,5 @@
 ﻿namespace GnojEd.Engine.Modules {
+  using System;
   using GnojEd.Engine.Controller;
   using GnojEd.Engine.Model;
   using Jessica;
@@ -12,6 +13,8 @@
     /// </summary>
     public MainModule()
       : base("/show") {
+      string siteAka = "site1";
+
       Get(
         "/",
         p => {
@@ -31,7 +34,7 @@
             model = controller.Read(id);
           }
 
-          return View(p.type, model);
+          return View(String.Format("{0}/{1}", siteAka, p.type), model);
         });
     }
   }

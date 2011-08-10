@@ -1,4 +1,5 @@
 ﻿namespace GnojEd.Engine.Modules {
+  using System;
   using System.Collections.Generic;
   using GnojEd.Engine.Controller;
   using GnojEd.Engine.Model;
@@ -34,7 +35,7 @@
       Get(
         "/:type/create",
         p => {
-          return View(p.type);
+          return View(String.Format("admin/{0}", p.type));
         });
 
       //// List one objects from database
@@ -51,7 +52,7 @@
           var controller = ControllerService.GetController((string)p.type);
           var item = (IModel)controller.Read(p.id);
 
-          return View(p.type, item);
+          return View(String.Format("admin/{0}", p.type), item);
         });
     }
 
@@ -90,7 +91,7 @@
       var controller = ControllerService.GetController((string)p.type);
       IEnumerable<IModel> list = controller.Read();
 
-      return View(p.type, list);
+      return View(String.Format("admin/{0}", p.type), list);
     }
 
     /// <summary>
@@ -119,7 +120,7 @@
       //// Get object-data
       var item = controller.Read(p.id);
 
-      return View(p.type, item);
+      return View(String.Format("admin/{0}", p.type), item);
     }
 
     /// <summary>
