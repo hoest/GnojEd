@@ -118,7 +118,10 @@
       var controller = ControllerService.GetController((string)p.type);
 
       //// Get object-data
-      var item = controller.Read(p.id);
+      var id = -1;
+      int.TryParse(p.id, out id);
+
+      var item = (IModel)controller.Read(id);
 
       return View(String.Format("admin/{0}", p.type), item);
     }

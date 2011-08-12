@@ -14,7 +14,13 @@
     /// </summary>
     /// <returns>IEnumerable of Users</returns>
     public IEnumerable<IModel> Read() {
-      return new List<User>();
+      User u = new User();
+      u.Name = "Jelle de Jong";
+      u.Login = "jelle";
+
+      return new List<User>() {
+        u
+      };
     }
 
     /// <summary>
@@ -24,6 +30,7 @@
     /// <returns>IModel object of the User</returns>
     public IModel Read(int id) {
       User u = new User();
+      u.Id = id;
       u.Name = "Jelle de Jong";
       u.Login = "jelle";
       return u;
