@@ -2,6 +2,7 @@
   using System;
   using System.Collections.Generic;
   using GnojEd.Engine.Controller;
+  using GnojEd.Engine.Extensions;
   using GnojEd.Engine.Model;
   using Jessica;
   using Jessica.Responses;
@@ -35,7 +36,7 @@
       Get(
         "/:type/create",
         p => {
-          return View(String.Format("admin/{0}", p.type));
+          return View(String.Format("admin/{0}_form", p.type));
         });
 
       //// List one objects from database
@@ -52,7 +53,7 @@
           var controller = ControllerService.GetController((string)p.type);
           var item = (IModel)controller.Read(p.id);
 
-          return View(String.Format("admin/{0}", p.type), item);
+          return View(String.Format("admin/{0}_form", p.type), item);
         });
     }
 
@@ -105,7 +106,8 @@
       //// Fill properties from post-data
       controller.Create(p.HttpContext.Request.Form);
 
-      return Response.AsRedirect(p.HttpContext.Request.UrlReferrer);
+      Uri referrer = p.HttpContext.Request.UrlReferrer;
+      return Response.AsRedirect(referrer.AddQueryParam("mode", "done").ToString());
     }
 
     /// <summary>
@@ -136,7 +138,8 @@
       //// Fill properties from post-data
       controller.Update(p.HttpContext.Request.Form);
 
-      return Response.AsRedirect(p.HttpContext.Request.UrlReferrer);
+      Uri referrer = p.HttpContext.Request.UrlReferrer;
+      return Response.AsRedirect(referrer.AddQueryParam("mode", "done").ToString());
     }
 
     /// <summary>
@@ -154,7 +157,7 @@
       //// Delete item
       controller.Delete(id);
 
-      return Response.AsRedirect(String.Format("/admin/{0}", (string)p.type));
+      return Response.AsRedirect(String.Format("/admin/{0}?mode=deleted", (string)p.type));
     }
   }
 }

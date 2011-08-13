@@ -3,6 +3,7 @@
   using System.Collections.Generic;
   using System.Collections.Specialized;
   using System.IO;
+  using System.Text.RegularExpressions;
   using System.Web;
   using System.Xml;
   using System.Xml.Linq;
@@ -37,9 +38,7 @@
         XmlDocument xmlModel = new XmlDocument();
 
         SortedList<string, string> props = new SortedList<string, string>();
-        this.AddProps(HttpContext.Current.Request.ServerVariables, props);
-        this.AddProps(HttpContext.Current.Request.Form, props);
-        this.AddProps(HttpContext.Current.Request.QueryString, props);
+        this.AddProps(HttpContext.Current.Request.Params, props);
 
         var xmlString = String.Empty;
         if (model != null) {
@@ -99,19 +98,27 @@
     /// <param name="obj">Object object</param>
     /// <returns>String with XML</returns>
     private string Serialize(object obj) {
-      XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-      ns.Add(String.Empty, String.Empty);
-      XmlWriterSettings writerSettings = new XmlWriterSettings();
-      writerSettings.OmitXmlDeclaration = true;
+      try {
+        XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+        ns.Add(String.Empty, String.Empty);
+        XmlWriterSettings writerSettings = new XmlWriterSettings();
+        writerSettings.OmitXmlDeclaration = true;
 
-      XmlSerializer serializer = new XmlSerializer(obj.GetType());
-      StringWriter stringWriter = new StringWriter();
+        XmlSerializer serializer = new XmlSerializer(obj.GetType());
+        StringWriter stringWriter = new StringWriter();
 
-      using (XmlWriter writer = XmlWriter.Create(stringWriter, writerSettings)) {
-        serializer.Serialize(writer, obj, ns);
+        using (XmlWriter writer = XmlWriter.Create(stringWriter, writerSettings)) {
+          serializer.Serialize(writer, obj, ns);
+        }
+
+        return stringWriter.ToString();
       }
-
-      return stringWriter.ToString();
+      catch (System.Xml.Xsl.XsltException xle) {
+        return xle.Message;
+      }
+      catch (Exception) {
+        throw;
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 ﻿namespace GnojEd.Engine.Modules {
   using System;
   using GnojEd.Engine.Data;
+  using GnojEd.Engine.Extensions;
   using Jessica;
   using Jessica.Responses;
 
@@ -40,13 +41,15 @@
       }
 
       if (p.HttpContext.Request.IsAuthenticated && p.HttpContext.Request.UrlReferrer != null) {
-        return Response.AsRedirect(p.HttpContext.Request.UrlReferrer);
+        Uri referrer = p.HttpContext.Request.UrlReferrer;
+        return Response.AsRedirect(referrer.AddQueryParam("login", "true").ToString());
       }
       else if (p.HttpContext.Request.IsAuthenticated) {
         return "Logged in";
       }
       else {
-        return Response.AsRedirect("/authentication/login?invalid=true");
+        Uri referrer = p.HttpContext.Request.UrlReferrer;
+        return Response.AsRedirect(referrer.AddQueryParam("invalid", "true").ToString());
       }
     }
   }

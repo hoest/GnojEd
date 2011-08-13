@@ -6,6 +6,7 @@
   using GnojEd.Engine.Data;
   using GnojEd.Engine.Model;
   using GnojEd.Model.Model;
+  using GnojEd.Model.Model.Shared;
 
   /// <summary>
   /// PageController class
@@ -21,7 +22,24 @@
     /// </summary>
     /// <param name="form">NameValueCollection object</param>
     public void Create(NameValueCollection form) {
+      User user = this.db.DB().User.FindByLogin("jelle");
+
+      Meta meta = new Meta();
+      meta.CreatorId = user.Id;
+      meta.Created = DateTime.Now;
+      meta.EditorId = user.Id;
+      meta.Modified = DateTime.Now;
+      meta.Aka = form["aka"];
+      meta.Description = form["description"];
+      meta.Title = form["title"];
+      meta = this.db.DB().Meta.Insert(meta);
+
       Page page = new Page();
+      page.MetaId = meta.Id;
+      page.SiteId = 1;
+      page.Introduction = form["introduction"];
+      page.Text = form["text"];
+
       this.db.DB().Page.Insert(page);
     }
 
@@ -39,7 +57,13 @@
     /// </summary>
     /// <returns>List of IModel model</returns>
     public IEnumerable<IModel> Read() {
-      throw new NotImplementedException();
+      List<Page> all = this.db.DB().Page.All().ToList<Page>();
+      ////foreach (var page in all) {
+      ////  Meta meta = this.db.DB().Meta.FindById(page.MetaId);
+      ////  page.Meta = meta;
+      ////}
+
+      return all;
     }
 
     /// <summary>

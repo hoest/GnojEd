@@ -83,6 +83,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\UriExtensions.cs" />
     <Compile Include="Model\IModel.cs" />
     <Compile Include="Model\ModelNotFoundException.cs" />
     <Compile Include="Model\ModelService.cs" />

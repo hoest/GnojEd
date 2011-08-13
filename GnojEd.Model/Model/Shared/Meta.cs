@@ -1,6 +1,7 @@
 ﻿namespace GnojEd.Model.Model.Shared {
   using System;
   using System.Collections.Generic;
+  using GnojEd.Engine.Data;
   using GnojEd.Engine.Model;
 
   /// <summary>
@@ -8,9 +9,19 @@
   /// </summary>
   public class Meta : IModel {
     /// <summary>
+    /// List of tags
+    /// </summary>
+    private List<Tag> tags = new List<Tag>();
+
+    /// <summary>
+    /// DBFactory object
+    /// </summary>
+    private DBFactory db = new DBFactory();
+
+    /// <summary>
     /// Gets or sets the ID
     /// </summary>
-    public int Id {
+    public uint Id {
       get;
       set;
     }
@@ -50,7 +61,7 @@
     /// <summary>
     /// Gets or sets the user who created this item
     /// </summary>
-    public User Creator {
+    public uint CreatorId {
       get;
       set;
     }
@@ -58,7 +69,7 @@
     /// <summary>
     /// Gets or sets the user who last modified this item
     /// </summary>
-    public User Editor {
+    public uint EditorId {
       get;
       set;
     }
@@ -74,7 +85,7 @@
     /// <summary>
     /// Gets or sets the tags
     /// </summary>
-    public IEnumerable<Tag> Tags {
+    public List<Tag> Tags {
       get;
       set;
     }

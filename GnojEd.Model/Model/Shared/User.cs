@@ -8,7 +8,7 @@
     /// <summary>
     /// Gets or sets the unique identifier
     /// </summary>
-    public int Id {
+    public uint Id {
       get;
       set;
     }
