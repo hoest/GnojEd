@@ -5,11 +5,12 @@
   using GnojEd.Engine.Controller;
   using GnojEd.Engine.Data;
   using GnojEd.Engine.Model;
+  using GnojEd.Model.Model;
 
   /// <summary>
-  /// UserController class
+  /// PageController class
   /// </summary>
-  public class UserController : IController {
+  public class PageController : IController {
     /// <summary>
     /// DBFactory object
     /// </summary>
@@ -20,7 +21,8 @@
     /// </summary>
     /// <param name="form">NameValueCollection object</param>
     public void Create(NameValueCollection form) {
-      throw new NotImplementedException();
+      Page page = new Page();
+      this.db.DB().Page.Insert(page);
     }
 
     /// <summary>

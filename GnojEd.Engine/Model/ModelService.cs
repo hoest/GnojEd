@@ -15,7 +15,8 @@
     public static IModel GetModel(string className) {
       var modelPath = new List<string>() {
         "GnojEd.Engine.Model",
-        "GnojEd.Model.Model"
+        "GnojEd.Model.Model",
+        "GnojEd.Model.Model.Shared"
       };
 
       string fullClassName = String.Format("{0}.{1}", "GnojEd.Engine.Model", className);

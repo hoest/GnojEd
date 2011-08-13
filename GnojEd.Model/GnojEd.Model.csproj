@@ -44,8 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\PageController.cs" />
     <Compile Include="Controller\UserController.cs" />
-    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Page.cs" />
+    <Compile Include="Model\Shared\Meta.cs" />
+    <Compile Include="Model\Shared\Tag.cs" />
+    <Compile Include="Model\Shared\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

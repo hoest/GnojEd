@@ -1,5 +1,6 @@
 ﻿namespace GnojEd.Engine.Controller {
   using System.Collections.Generic;
+  using System.Collections.Specialized;
   using GnojEd.Engine.Model;
 
   /// <summary>
@@ -9,8 +10,8 @@
     /// <summary>
     /// Create method
     /// </summary>
-    /// <param name="model">IModel object</param>
-    void Create(IModel model);
+    /// <param name="form">NameValueCollection object</param>
+    void Create(NameValueCollection form);
 
     /// <summary>
     /// Read method
@@ -28,13 +29,13 @@
     /// <summary>
     /// Update method
     /// </summary>
-    /// <param name="model">IModel object</param>
-    void Update(IModel model);
+    /// <param name="form">NameValueCollection object</param>
+    void Update(NameValueCollection form);
 
     /// <summary>
     /// Delete method
     /// </summary>
-    /// <param name="model">IModel object</param>
-    void Delete(IModel model);
+    /// <param name="id">Id of the model-item</param>
+    void Delete(int id);
   }
 }

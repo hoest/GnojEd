@@ -103,8 +103,7 @@
       var controller = ControllerService.GetController((string)p.type);
 
       //// Fill properties from post-data
-      IModel item = null;
-      controller.Create(item);
+      controller.Create(p.HttpContext.Request.Form);
 
       return Response.AsRedirect(p.HttpContext.Request.UrlReferrer);
     }
@@ -134,11 +133,8 @@
     private Response Update(dynamic p) {
       var controller = ControllerService.GetController((string)p.type);
 
-      //// Get object-data
-      var item = controller.Read(p.id);
-
       //// Fill properties from post-data
-      controller.Update(item);
+      controller.Update(p.HttpContext.Request.Form);
 
       return Response.AsRedirect(p.HttpContext.Request.UrlReferrer);
     }
@@ -152,12 +148,13 @@
       var controller = ControllerService.GetController((string)p.type);
 
       //// Get object-data
-      var item = controller.Read(p.id);
+      var id = -1;
+      int.TryParse(p.id, out id);
 
       //// Delete item
-      controller.Delete(item);
+      controller.Delete(id);
 
-      return Response.AsRedirect(p.HttpContext.Request.UrlReferrer);
+      return Response.AsRedirect(String.Format("/admin/{0}", (string)p.type));
     }
   }
 }

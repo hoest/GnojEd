@@ -1,4 +1,4 @@
-﻿namespace GnojEd.Model.Model {
+﻿namespace GnojEd.Model.Model.Shared {
   using GnojEd.Engine.Model;
 
   /// <summary>
