@@ -119,7 +119,7 @@
       var controller = ControllerService.GetController((string)p.type);
 
       //// Get object-data
-      var id = -1;
+      int id = -1;
       int.TryParse(p.id, out id);
 
       var item = (IModel)controller.Read(id);
@@ -151,7 +151,7 @@
       var controller = ControllerService.GetController((string)p.type);
 
       //// Get object-data
-      var id = -1;
+      int id = -1;
       int.TryParse(p.id, out id);
 
       //// Delete item

@@ -21,7 +21,7 @@
     /// <summary>
     /// Gets or sets the ID
     /// </summary>
-    public uint Id {
+    public int Id {
       get;
       set;
     }
@@ -61,7 +61,7 @@
     /// <summary>
     /// Gets or sets the user who created this item
     /// </summary>
-    public uint CreatorId {
+    public int CreatorId {
       get;
       set;
     }
@@ -69,7 +69,7 @@
     /// <summary>
     /// Gets or sets the user who last modified this item
     /// </summary>
-    public uint EditorId {
+    public int EditorId {
       get;
       set;
     }

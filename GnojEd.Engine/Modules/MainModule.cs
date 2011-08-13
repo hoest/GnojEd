@@ -29,11 +29,8 @@
           // servername prop
           var controller = ControllerService.GetController((string)p.type);
           int id = -1;
-          IModel model = null;
-          if (int.TryParse(p.id, out id)) {
-            model = controller.Read(id);
-          }
-
+          int.TryParse(p.id, out id);
+          IModel model = controller.Read(id);
           return View(String.Format("{0}/{1}", siteAka, p.type), model);
         });
     }

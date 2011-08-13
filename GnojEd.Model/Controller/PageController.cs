@@ -49,7 +49,8 @@
     /// <param name="id">Unique identifier</param>
     /// <returns>IModel model</returns>
     public IModel Read(int id) {
-      throw new NotImplementedException();
+      Page page = this.db.DB().Page.FindById(id);
+      return page;
     }
 
     /// <summary>
@@ -57,13 +58,7 @@
     /// </summary>
     /// <returns>List of IModel model</returns>
     public IEnumerable<IModel> Read() {
-      List<Page> all = this.db.DB().Page.All().ToList<Page>();
-      ////foreach (var page in all) {
-      ////  Meta meta = this.db.DB().Meta.FindById(page.MetaId);
-      ////  page.Meta = meta;
-      ////}
-
-      return all;
+      return this.db.DB().Page.All().ToList<Page>();
     }
 
     /// <summary>

@@ -10,7 +10,7 @@
     /// <summary>
     /// Unique identifier for the meta-object
     /// </summary>
-    private uint metaId = 0;
+    private int metaId = 0;
 
     /// <summary>
     /// DBFactory object
@@ -20,7 +20,7 @@
     /// <summary>
     /// Gets or sets the unique identifier
     /// </summary>
-    public uint Id {
+    public int Id {
       get;
       set;
     }
@@ -28,7 +28,7 @@
     /// <summary>
     /// Gets or sets the unique identifier of the site
     /// </summary>
-    public uint SiteId {
+    public int SiteId {
       get;
       set;
     }
@@ -36,7 +36,7 @@
     /// <summary>
     /// Gets or sets the unique identifier of the site
     /// </summary>
-    public uint MetaId {
+    public int MetaId {
       get {
         return this.metaId;
       }
