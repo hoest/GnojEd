@@ -32,8 +32,8 @@
     <OutputType>Library</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Jessica">
-      <HintPath>..\packages\Jessica.0.9.0\lib\Jessica.dll</HintPath>
+    <Reference Include="Jessica, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Jessica.0.9.5\lib\Jessica.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

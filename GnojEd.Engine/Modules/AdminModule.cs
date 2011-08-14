@@ -36,7 +36,7 @@
       Get(
         "/:type/create",
         p => {
-          return View(String.Format("admin/{0}_form", p.type));
+          return Render(String.Format("admin/{0}_form", p.type));
         });
 
       //// List one objects from database
@@ -53,7 +53,7 @@
           var controller = ControllerService.GetController((string)p.type);
           var item = (IModel)controller.Read(p.id);
 
-          return View(String.Format("admin/{0}_form", p.type), item);
+          return Render(String.Format("admin/{0}_form", p.type), item);
         });
     }
 
@@ -92,7 +92,7 @@
       var controller = ControllerService.GetController((string)p.type);
       IEnumerable<IModel> list = controller.Read();
 
-      return View(String.Format("admin/{0}", p.type), list);
+      return Render(String.Format("admin/{0}", p.type), list);
     }
 
     /// <summary>
@@ -124,7 +124,7 @@
 
       var item = (IModel)controller.Read(id);
 
-      return View(String.Format("admin/{0}", p.type), item);
+      return Render(String.Format("admin/{0}", p.type), item);
     }
 
     /// <summary>

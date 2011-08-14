@@ -42,8 +42,8 @@
     <RootNamespace>GnojEd.Engine</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Jessica">
-      <HintPath>..\packages\Jessica.0.9.0\lib\Jessica.dll</HintPath>
+    <Reference Include="Jessica, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Jessica.0.9.5\lib\Jessica.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=5.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

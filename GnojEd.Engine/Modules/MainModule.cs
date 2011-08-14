@@ -31,7 +31,7 @@
           int id = -1;
           int.TryParse(p.id, out id);
           IModel model = controller.Read(id);
-          return View(String.Format("{0}/{1}", siteAka, p.type), model);
+          return Render(String.Format("{0}/{1}", siteAka, p.type), model);
         });
     }
   }
