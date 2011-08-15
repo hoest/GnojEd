@@ -24,8 +24,10 @@
         <p>
           <strong>StackTrace</strong>
           <xsl:text>: </xsl:text>
-          <xsl:value-of select="data/Model/Error/StackTrace" />
         </p>
+        <pre>
+          <xsl:value-of select="data/Model/Error/StackTrace" />
+        </pre>
       </body>
     </html>
   </xsl:template>
