@@ -98,27 +98,19 @@
     /// <param name="obj">Object object</param>
     /// <returns>String with XML</returns>
     private string Serialize(object obj) {
-      try {
-        XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-        ns.Add(String.Empty, String.Empty);
-        XmlWriterSettings writerSettings = new XmlWriterSettings();
-        writerSettings.OmitXmlDeclaration = true;
+      XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+      ns.Add(String.Empty, String.Empty);
+      XmlWriterSettings writerSettings = new XmlWriterSettings();
+      writerSettings.OmitXmlDeclaration = true;
 
-        XmlSerializer serializer = new XmlSerializer(obj.GetType());
-        StringWriter stringWriter = new StringWriter();
+      XmlSerializer serializer = new XmlSerializer(obj.GetType());
+      StringWriter stringWriter = new StringWriter();
 
-        using (XmlWriter writer = XmlWriter.Create(stringWriter, writerSettings)) {
-          serializer.Serialize(writer, obj, ns);
-        }
+      using (XmlWriter writer = XmlWriter.Create(stringWriter, writerSettings)) {
+        serializer.Serialize(writer, obj, ns);
+      }
 
-        return stringWriter.ToString();
-      }
-      catch (System.Xml.Xsl.XsltException xle) {
-        return xle.Message;
-      }
-      catch (Exception) {
-        throw;
-      }
+      return stringWriter.ToString();
     }
   }
 }

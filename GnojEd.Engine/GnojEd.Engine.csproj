@@ -82,6 +82,7 @@
     <Compile Include="Data\IDBFactory.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Shared\Error.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\UriExtensions.cs" />
     <Compile Include="Model\IModel.cs" />

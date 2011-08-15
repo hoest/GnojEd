@@ -25,6 +25,13 @@
     /// Initialise the Get routes
     /// </summary>
     private void InitGet() {
+      //// GET : Default root view
+      Get(
+        "/",
+        p => {
+          return Render(String.Format("admin/default"));
+        });
+
       //// GET : List of objects from database
       Get(
         "/:type",
