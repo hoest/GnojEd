@@ -20,7 +20,7 @@
           return null;
         }
         else {
-          return Response.AsRedirect("/authentication/login");
+          return Response.AsRedirect(String.Format("/authentication/login?ref={0}", p.HttpContext.Request.Url.AbsolutePath));
         }
       };
     }

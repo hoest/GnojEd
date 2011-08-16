@@ -3,7 +3,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -82,6 +82,7 @@
     <Compile Include="Data\IDBFactory.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Shared\Error.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\UriExtensions.cs" />

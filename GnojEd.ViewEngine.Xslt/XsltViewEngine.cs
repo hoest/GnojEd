@@ -40,6 +40,10 @@
         SortedList<string, string> props = new SortedList<string, string>();
         this.AddProps(HttpContext.Current.Request.Params, props);
 
+        foreach (string key in HttpContext.Current.Session.Keys) {
+          props.Add(key, String.Format("{0}", HttpContext.Current.Session[key]));
+        }
+
         var xmlString = String.Empty;
         if (model != null) {
           xmlString = String.Format("<?xml version=\"1.0\" encoding=\"utf-8\"?><data><Model>{0}</Model>{1}</data>", this.Serialize(model), this.GetPropsAsXml(props));
@@ -71,7 +75,7 @@
     private string GetPropsAsXml(SortedList<string, string> props) {
       XElement root = new XElement("props");
       foreach (var prop in props) {
-        if (!String.IsNullOrWhiteSpace(prop.Value)) {
+        if (!prop.Key.StartsWith(".") && !String.IsNullOrWhiteSpace(prop.Value)) {
           root.Add(new XElement("prop", new XAttribute("name", prop.Key.ToLowerInvariant()), new XAttribute("value", prop.Value)));
         }
       }
@@ -86,7 +90,7 @@
     /// <param name="props">SortedList with properties</param>
     private void AddProps(NameValueCollection nameValueCollection, SortedList<string, string> props) {
       foreach (string key in nameValueCollection.AllKeys) {
-        if (!String.IsNullOrWhiteSpace(key)) {
+        if (!key.StartsWith(".") && !String.IsNullOrWhiteSpace(key)) {
           props.Add(key, nameValueCollection[key]);
         }
       }
@@ -98,19 +102,32 @@
     /// <param name="obj">Object object</param>
     /// <returns>String with XML</returns>
     private string Serialize(object obj) {
-      XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-      ns.Add(String.Empty, String.Empty);
-      XmlWriterSettings writerSettings = new XmlWriterSettings();
-      writerSettings.OmitXmlDeclaration = true;
-
-      XmlSerializer serializer = new XmlSerializer(obj.GetType());
-      StringWriter stringWriter = new StringWriter();
-
-      using (XmlWriter writer = XmlWriter.Create(stringWriter, writerSettings)) {
-        serializer.Serialize(writer, obj, ns);
+      if (obj.GetType() == typeof(XDocument)) {
+        return ((XDocument)obj).ToString();
       }
+      else if (obj.GetType() == typeof(XElement)) {
+        return ((XElement)obj).ToString();
+      }
+      else {
+        try {
+          XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+          ns.Add(String.Empty, String.Empty);
+          XmlWriterSettings writerSettings = new XmlWriterSettings();
+          writerSettings.OmitXmlDeclaration = true;
 
-      return stringWriter.ToString();
+          XmlSerializer serializer = new XmlSerializer(obj.GetType());
+          StringWriter stringWriter = new StringWriter();
+
+          using (XmlWriter writer = XmlWriter.Create(stringWriter, writerSettings)) {
+            serializer.Serialize(writer, obj, ns);
+          }
+
+          return stringWriter.ToString();
+        }
+        catch (Exception) {
+          return "<notserializable />";
+        }
+      }
     }
   }
 }

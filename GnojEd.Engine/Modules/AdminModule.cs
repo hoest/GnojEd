@@ -4,6 +4,7 @@
   using GnojEd.Engine.Controller;
   using GnojEd.Engine.Extensions;
   using GnojEd.Engine.Model;
+  using GnojEd.Engine.Shared;
   using Jessica;
   using Jessica.Responses;
 
@@ -16,7 +17,7 @@
     /// </summary>
     public AdminModule()
       : base("/admin") {
-      ////Before += Authentication.Authenticate();
+      Before += Authentication.Authenticate();
       this.InitGet();
       this.InitPost();
     }
