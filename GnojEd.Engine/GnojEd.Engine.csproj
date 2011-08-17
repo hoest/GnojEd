@@ -75,7 +75,12 @@
     <Compile Include="Config\GnojEdConfiguration.cs" />
     <Compile Include="Controller\ControllerNotFoundException.cs" />
     <Compile Include="Controller\ControllerService.cs" />
+    <Compile Include="Controller\ViewController.cs" />
+    <Compile Include="Controller\TagController.cs" />
+    <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Controller\PageController.cs" />
     <Compile Include="Controller\IController.cs" />
+    <Compile Include="Controller\SiteController.cs" />
     <Compile Include="Data\DBFactory.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -83,12 +88,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Model\View.cs" />
+    <Compile Include="Model\Tag.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\IModel.cs" />
+    <Compile Include="Model\Page.cs" />
+    <Compile Include="Model\Site.cs" />
     <Compile Include="Shared\Error.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\UriExtensions.cs" />
-    <Compile Include="Model\IModel.cs" />
-    <Compile Include="Model\ModelNotFoundException.cs" />
-    <Compile Include="Model\ModelService.cs" />
     <Compile Include="Modules\AdminModule.cs" />
     <Compile Include="Modules\AuthenticationModule.cs">
       <SubType>Code</SubType>

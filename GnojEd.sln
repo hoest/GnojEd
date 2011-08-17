@@ -6,7 +6,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GnojEd.Site", "GnojEd.Site\", "{A62D37CD-CC47-416D-A457-DC07AAF60FFF}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		ProjectReferences = "{767F8D5A-9953-4B7F-A146-F5D616699FB6}|GnojEd.Engine.dll;{D47C96DB-4349-4BEC-A602-2F711935F13A}|GnojEd.Model.dll;{EBE08536-6D95-4C0C-951D-D5A87E373319}|GnojEd.ViewEngine.Xslt.dll;"
+		ProjectReferences = "{767F8D5A-9953-4B7F-A146-F5D616699FB6}|GnojEd.Engine.dll;{EBE08536-6D95-4C0C-951D-D5A87E373319}|GnojEd.ViewEngine.Xslt.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/GnojEd.Site"
 		Debug.AspNetCompiler.PhysicalPath = "GnojEd.Site\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\GnojEd.Site\"
@@ -27,8 +27,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GnojEd.Site", "GnojEd.Site\
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnojEd.Sql", "GnojEd.Sql\GnojEd.Sql.csproj", "{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnojEd.Model", "GnojEd.Model\GnojEd.Model.csproj", "{D47C96DB-4349-4BEC-A602-2F711935F13A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnojEd.ViewEngine.Xslt", "GnojEd.ViewEngine.Xslt\GnojEd.ViewEngine.Xslt.csproj", "{EBE08536-6D95-4C0C-951D-D5A87E373319}"
 EndProject
@@ -73,16 +71,6 @@ Global
 		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Release|x86.ActiveCfg = Release|x86
 		{F29A51F6-CE00-4CDF-B7DB-9E1243F3432D}.Release|x86.Build.0 = Release|x86
-		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{D47C96DB-4349-4BEC-A602-2F711935F13A}.Release|x86.ActiveCfg = Release|Any CPU
 		{EBE08536-6D95-4C0C-951D-D5A87E373319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EBE08536-6D95-4C0C-951D-D5A87E373319}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBE08536-6D95-4C0C-951D-D5A87E373319}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

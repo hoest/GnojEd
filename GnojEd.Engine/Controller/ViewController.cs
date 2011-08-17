@@ -1,15 +1,14 @@
-﻿namespace GnojEd.Model.Controller {
+﻿namespace GnojEd.Engine.Controller {
   using System;
   using System.Collections.Generic;
   using System.Collections.Specialized;
-  using GnojEd.Engine.Controller;
   using GnojEd.Engine.Data;
   using GnojEd.Engine.Model;
 
   /// <summary>
-  /// UserController class
+  /// ViewController class
   /// </summary>
-  public class UserController : IController {
+  public class ViewController : IController {
     /// <summary>
     /// DBFactory object
     /// </summary>
@@ -26,18 +25,18 @@
     /// <summary>
     /// Read method
     /// </summary>
-    /// <param name="id">Unique identifier</param>
-    /// <returns>IModel model</returns>
+    /// <param name="id">Id of the model-item</param>
+    /// <returns>A IModel object</returns>
     public IModel Read(int id) {
-      throw new NotImplementedException();
+      return (View)this.db.DB().View.FindById(id);
     }
 
     /// <summary>
-    /// Read all method
+    /// Read method; read all items
     /// </summary>
-    /// <returns>List of IModel model</returns>
-    public IEnumerable<IModel> Read() {
-      throw new NotImplementedException();
+    /// <returns>IEnumerable of IModel objects</returns>
+    public IEnumerable<IModel> ReadAll() {
+      return this.db.DB().View.All().ToList<View>();
     }
 
     /// <summary>
@@ -51,9 +50,9 @@
     /// <summary>
     /// Delete method
     /// </summary>
-    /// <param name="id">Unique identifier</param>
+    /// <param name="id">Id of the model-item</param>
     public void Delete(int id) {
-      throw new NotImplementedException();
+      this.db.DB().View.DeleteById(id);
     }
   }
 }

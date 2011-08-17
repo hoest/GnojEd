@@ -1,7 +1,6 @@
 ﻿namespace GnojEd.Engine.Modules {
   using System;
   using GnojEd.Engine.Controller;
-  using GnojEd.Engine.Model;
   using Jessica;
 
   /// <summary>
@@ -30,7 +29,7 @@
           var controller = ControllerService.GetController((string)p.type);
           int id = -1;
           int.TryParse(p.id, out id);
-          IModel model = controller.Read(id);
+          var model = controller.Read(id);
           return Render(String.Format("{0}/{1}", siteAka, p.type), model);
         });
     }

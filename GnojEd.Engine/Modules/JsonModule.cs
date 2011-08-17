@@ -1,8 +1,6 @@
 ﻿namespace GnojEd.Engine.Modules {
   using System.Collections.Generic;
-  using System.Linq;
   using GnojEd.Engine.Controller;
-  using GnojEd.Engine.Model;
   using Jessica;
   using Jessica.Responses;
 
@@ -19,7 +17,7 @@
         "/:type",
         p => {
           var controller = ControllerService.GetController((string)p.type);
-          List<IModel> list = controller.Read().ToList();
+          var list = controller.ReadAll();
           return Response.AsJson(list);
         });
 
@@ -31,7 +29,7 @@
           //// Get object-data
           int id = -1;
           int.TryParse(p.id, out id);
-          var item = (IModel)controller.Read(id);
+          var item = controller.Read(id);
           return Response.AsJson(item);
         });
     }

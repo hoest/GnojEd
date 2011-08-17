@@ -4,6 +4,6 @@
   <xsl:import href="include/layout.xsl"/>
 
   <xsl:template match="/" mode="content">
-    <p>Page</p>
+    <p>User</p>
   </xsl:template>
 </xsl:stylesheet>

@@ -14,9 +14,7 @@
     /// <returns>IController object</returns>
     public static IController GetController(string className) {
       var controllerPath = new List<string>() {
-        "GnojEd.Engine.Controller",
-        "GnojEd.Model.Controller",
-        "GnojEd.Model.Controller.Shared"
+        "GnojEd.Engine.Controller"
       };
 
       className = String.Format("{0}Controller", className);

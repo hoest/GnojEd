@@ -3,7 +3,6 @@
   using System.Collections.Generic;
   using GnojEd.Engine.Controller;
   using GnojEd.Engine.Extensions;
-  using GnojEd.Engine.Model;
   using GnojEd.Engine.Shared;
   using Jessica;
   using Jessica.Responses;
@@ -59,7 +58,7 @@
         "/:type/:id/update",
         p => {
           var controller = ControllerService.GetController((string)p.type);
-          var item = (IModel)controller.Read(p.id);
+          var item = controller.Read(p.id);
 
           return Render(String.Format("admin/{0}_form", p.type), item);
         });
@@ -98,7 +97,7 @@
     /// <returns>Jessica Response object</returns>
     private Response List(dynamic p) {
       var controller = ControllerService.GetController((string)p.type);
-      IEnumerable<IModel> list = controller.Read();
+      var list = controller.ReadAll();
 
       return Render(String.Format("admin/{0}", p.type), list);
     }
@@ -130,7 +129,7 @@
       int id = -1;
       int.TryParse(p.id, out id);
 
-      var item = (IModel)controller.Read(id);
+      var item = controller.Read(id);
 
       return Render(String.Format("admin/{0}", p.type), item);
     }

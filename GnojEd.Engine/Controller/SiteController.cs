@@ -1,41 +1,58 @@
 ﻿namespace GnojEd.Engine.Controller {
+  using System;
   using System.Collections.Generic;
   using System.Collections.Specialized;
+  using GnojEd.Engine.Data;
   using GnojEd.Engine.Model;
 
   /// <summary>
-  /// IController interface
+  /// SiteController class
   /// </summary>
-  public interface IController {
+  public class SiteController : IController {
+    /// <summary>
+    /// DBFactory object
+    /// </summary>
+    private DBFactory db = new DBFactory();
+
     /// <summary>
     /// Create method
     /// </summary>
     /// <param name="form">NameValueCollection object</param>
-    void Create(NameValueCollection form);
+    public void Create(NameValueCollection form) {
+      throw new NotImplementedException();
+    }
 
     /// <summary>
     /// Read method
     /// </summary>
     /// <param name="id">Id of the model-item</param>
-    /// <returns>An IModel object</returns>
-    IModel Read(int id);
+    /// <returns>A IModel object</returns>
+    public IModel Read(int id) {
+      return (Site)this.db.DB().Site.FindById(id);
+    }
 
     /// <summary>
     /// Read method; read all items
     /// </summary>
     /// <returns>IEnumerable of IModel objects</returns>
-    IEnumerable<IModel> ReadAll();
+    public IEnumerable<IModel> ReadAll() {
+      return this.db.DB().Site.All().ToList<Site>();
+    }
 
     /// <summary>
     /// Update method
     /// </summary>
     /// <param name="form">NameValueCollection object</param>
-    void Update(NameValueCollection form);
+    public void Update(NameValueCollection form) {
+      throw new NotImplementedException();
+    }
 
     /// <summary>
     /// Delete method
     /// </summary>
     /// <param name="id">Id of the model-item</param>
-    void Delete(int id);
+    public void Delete(int id) {
+      this.db.DB().Site.DeleteById(id);
+    }
   }
 }
