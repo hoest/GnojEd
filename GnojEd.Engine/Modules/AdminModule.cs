@@ -58,9 +58,11 @@
         "/:type/:id/update",
         p => {
           var controller = ControllerService.GetController((string)p.type);
-          var item = controller.Read(p.id);
+          int id = -1;
+          int.TryParse(p.id, out id);
+          var model = controller.Read(id);
 
-          return Render(String.Format("admin/{0}_form", p.type), item);
+          return Render(String.Format("admin/{0}_form", p.type), model);
         });
     }
 

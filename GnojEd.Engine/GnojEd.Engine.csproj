@@ -87,6 +87,7 @@
     <Compile Include="Data\IDBFactory.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Extensions\NameValueCollectionExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Model\View.cs" />
     <Compile Include="Model\Tag.cs" />

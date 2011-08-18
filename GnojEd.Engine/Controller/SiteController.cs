@@ -3,6 +3,7 @@
   using System.Collections.Generic;
   using System.Collections.Specialized;
   using GnojEd.Engine.Data;
+  using GnojEd.Engine.Extensions;
   using GnojEd.Engine.Model;
 
   /// <summary>
@@ -19,7 +20,8 @@
     /// </summary>
     /// <param name="form">NameValueCollection object</param>
     public void Create(NameValueCollection form) {
-      throw new NotImplementedException();
+      var site = this.GetSiteObject(form);
+      this.db.DB().Site.Insert(site);
     }
 
     /// <summary>
@@ -44,7 +46,8 @@
     /// </summary>
     /// <param name="form">NameValueCollection object</param>
     public void Update(NameValueCollection form) {
-      throw new NotImplementedException();
+      var site = this.GetSiteObject(form);
+      this.db.DB().Site.Update(site);
     }
 
     /// <summary>
@@ -53,6 +56,30 @@
     /// <param name="id">Id of the model-item</param>
     public void Delete(int id) {
       this.db.DB().Site.DeleteById(id);
+    }
+
+    /// <summary>
+    /// GetSiteObject: Create a Site object from the form
+    /// </summary>
+    /// <param name="form">NameValueCollection object</param>
+    /// <returns>Site object</returns>
+    private Site GetSiteObject(NameValueCollection form) {
+      Site site = new Site();
+      
+      int id = 0;
+      if (!String.IsNullOrEmpty(form["Id"]) && int.TryParse(form["Id"], out id)) {
+        site.Id = id;
+      }
+
+      site.Name = form.GetValue("Name");
+      site.Aka = form.GetValue("Aka");
+
+      int viewId = 0;
+      if (!String.IsNullOrEmpty(form["ViewId"]) && int.TryParse(form["ViewId"], out viewId)) {
+        site.ViewId = viewId;
+      }
+
+      return site;
     }
   }
 }

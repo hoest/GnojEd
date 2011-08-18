@@ -35,7 +35,7 @@
     /// <summary>
     /// Gets or sets the ViewId
     /// </summary>
-    public int ViewId {
+    public int? ViewId {
       get;
       set;
     }
