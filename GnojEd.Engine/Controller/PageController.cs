@@ -19,7 +19,6 @@ using GnojEd.Engine.Data;
     /// </summary>
     /// <param name="form">NameValueCollection object</param>
     public void Create(NameValueCollection form) {
-      throw new NotImplementedException();
     }
 
     /// <summary>
@@ -44,7 +43,6 @@ using GnojEd.Engine.Data;
     /// </summary>
     /// <param name="form">NameValueCollection object</param>
     public void Update(NameValueCollection form) {
-      throw new NotImplementedException();
     }
 
     /// <summary>

@@ -22,8 +22,6 @@
                        where classPaths.Contains(t.Namespace)
                        where t.GetInterface(type.Name) != null
                        select t;
-
-        //// asm.GetTypes().Where(t => t.GetInterface(type.FullName) != null)
         types.AddRange(asmTypes);
       });
 
