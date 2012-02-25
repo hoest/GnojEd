@@ -3,6 +3,7 @@
 *.suo
 *.tmp
 *.user
+.DS_Store
 bin
 obj
 PrecompiledWeb
